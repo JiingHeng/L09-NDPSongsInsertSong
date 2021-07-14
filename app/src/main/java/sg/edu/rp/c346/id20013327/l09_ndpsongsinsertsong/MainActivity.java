@@ -70,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
                     return;
                 }
                 int selectedID = rgStars.getCheckedRadioButtonId();
-//                int stars = getStars();
+                int stars = getStars();
                 DBHelper dbh = new DBHelper(MainActivity.this);
                 long inserted_id = dbh.insertSong(title, singer, year, selectedID);
 
@@ -90,27 +90,27 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
-
-//        private int getStars() {
-//            int stars = 1;
-//            switch (rgStars.getCheckedRadioButtonId()) {
-//                case R.id.rb1:
-//                    stars = 1;
-//                    break;
-//                case R.id.rb2:
-//                    stars = 2;
-//                    break;
-//                case R.id.rb3:
-//                    stars = 3;
-//                    break;
-//                case R.id.rb4:
-//                    stars = 4;
-//                    break;
-//                case R.id.rb5:
-//                    stars = 5;
-//                    break;
-//            }
-//        }
     }
 
+    private int getStars() {
+        int stars = 1;
+        switch (rgStars.getCheckedRadioButtonId()) {
+            case R.id.rb1:
+                stars = 1;
+                break;
+            case R.id.rb2:
+                stars = 2;
+                break;
+            case R.id.rb3:
+                stars = 3;
+                break;
+            case R.id.rb4:
+                stars = 4;
+                break;
+            case R.id.rb5:
+                stars = 5;
+                break;
+        }
+        return stars;
+    }
 }
