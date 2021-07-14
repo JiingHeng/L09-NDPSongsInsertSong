@@ -92,6 +92,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+
     private int getStars() {
         int stars = 1;
         switch (rgStars.getCheckedRadioButtonId()) {
